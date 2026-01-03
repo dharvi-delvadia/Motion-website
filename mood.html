@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Identifier System | Motion</title>
+    <link rel="stylesheet" href="mood.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#" id="nav-home" class="nav-link active">Home</a>
+            <a href="#" id="nav-tips" class="nav-link">Tips</a>
+            <a href="#" id="nav-calendar" class="nav-link">Mood Calendar</a>
+            <a href="#" id="nav-feelchat" class="nav-link">FeelChat</a>
+            <a href="#" id="nav-freshup" class="nav-link">Fresh Up</a>
+            <a href="#" id="nav-about" class="nav-link">About</a>
+        </div>
+    </nav>
+
+    <!-- Background Decoration -->
+    <div class="background-animation">
+        <div class="floating-emoji e1">☁️</div>
+        <div class="floating-emoji e2">✨</div>
+        <div class="floating-emoji e3">🌙</div>
+        <div class="floating-emoji e4">🍃</div>
+        <div class="floating-emoji e5">🌊</div>
+    </div>
+
+    <div class="glass-container">
+
+        <!-- SECTION 1: LANDING PAGE -->
+        <section id="landing-page" class="active-section">
+            <header>
+                <h1 class="logo">Motion ✨</h1>
+                <p class="subtitle">Your Daily Mood Check-in 📅</p>
+            </header>
+
+            <div class="main-content">
+                <h2>How are you really feeling?</h2>
+                <p class="description">
+                    Take a quick moment for yourself.
+                    Answer 7 simple questions to better understand your mood today.
+                </p>
+                <button id="start-btn" class="primary-btn">✨ Start Detecting</button>
+            </div>
+        </section>
+
+        <!-- SECTION 2: QUIZ -->
+        <section id="quiz-page" class="hidden-section">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="question-container">
+                <h3 id="question-text">Question goes here?</h3>
+                <div class="options-grid" id="options-container">
+                    <!-- Options injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: RESULT -->
+        <section id="result-page" class="hidden-section">
+            <div class="result-content">
+                <div class="mood-icon" id="result-icon">🌟</div>
+                <h2 id="result-title">Your Mood</h2>
+                <p id="result-description">Description of the mood.</p>
+                <div class="result-actions"
+                    style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                    <button id="goto-tips-btn" class="primary-btn">Get My Tips ✨</button>
+                    <button id="restart-btn" class="secondary-btn">Check Again</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: TIPS PAGE -->
+        <section id="tips-page" class="hidden-section">
+            <header>
+                <h2 id="tips-title">Sweet Tips for You ✨</h2>
+                <p class="subtitle">Recover & Relax 🌸</p>
+            </header>
+
+            <div id="tips-content" class="tips-container" style="text-align: left; margin: 20px 0;">
+                <!-- Tips injected via JS -->
+            </div>
+
+            <div class="video-suggestions">
+                <h3 style="margin-bottom: 15px;">📺 Recommended Videos</h3>
+                <div id="video-container" class="video-grid">
+                    <!-- Videos injected via JS -->
+                </div>
+            </div>
+
+            <div class="video-suggestions" style="margin-top: 20px;">
+                <h3 style="margin-bottom: 15px;">🎵 Best Songs for You</h3>
+                <div id="songs-container" class="video-grid">
+                    <!-- Songs injected via JS -->
+                </div>
+            </div>
+
+            <button id="back-home-btn" class="secondary-btn" style="margin-top: 20px;">Back to Home</button>
+        </section>
+
+        <!-- SECTION 5: MOOD CALENDAR -->
+        <section id="calendar-page" class="hidden-section">
+            <header>
+                <h2>Mood Calendar 📅</h2>
+                <div class="streak-badge">🔥 Current Streak: <span id="streak-count">0</span> Days</div>
+            </header>
+
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prev-month" class="nav-btn">&lt;</button>
+                    <h3 id="calendar-month-year">Month Year</h3>
+                    <button id="next-month" class="nav-btn">&gt;</button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div id="calendar-grid" class="calendar-grid">
+                    <!-- Calendar cells injected via JS -->
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <p id="thought-of-the-day">"Loading your daily dose of motivation..."</p>
+            </div>
+
+            <button class="secondary-btn back-to-home">Back to Home</button>
+        </section>
+
+        <!-- SECTION 6: FEELCHAT -->
+        <section id="feelchat-page" class="hidden-section">
+            <div class="feelchat-header">
+                <h2 class="soulful-title">If you want to share something, I am here to <span
+                        class="highlight-text">listen to you peacefully.</span> Speak up! ✨</h2>
+            </div>
+
+            <div class="chat-container">
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message ai-message">Hi there! I'm your Motion friend. How are you feeling right now? I'm
+                        listening. 🌸</div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Type your heart out..." autocomplete="off">
+                    <button id="send-chat-btn">Send</button>
+                </div>
+            </div>
+
+            <button class="secondary-btn back-to-home" style="margin-top: 20px;">Back to Home</button>
+        </section>
+
+        <!-- SECTION 7: FRESH UP (MEMORY GAME) -->
+        <section id="freshup-page" class="hidden-section">
+            <header>
+                <h2>Mood Pair Match 🧩</h2>
+                <p>Relax your mind and find the matching cute mood emojis!</p>
+            </header>
+
+            <div id="game-start-screen">
+                <div class="game-info">
+                    <p>Click the cards to reveal the emojis and find all the pairs to "Fresh Up" your mind! ✨</p>
+                    <button id="start-game-btn" class="primary-btn">Start Game</button>
+                </div>
+            </div>
+
+            <div id="game-board-container" class="hidden-section">
+                <div class="game-stats">
+                    <span>Moves: <span id="game-moves">0</span></span>
+                    <span>Time: <span id="game-timer">00:00</span></span>
+                </div>
+                <div id="memory-grid" class="memory-grid">
+                    <!-- Cards injected via JS -->
+                </div>
+                <button id="reset-game-btn" class="secondary-btn">Reset Game</button>
+            </div>
+
+            <div id="game-win-screen" class="hidden-section">
+                <h3>Great Job! 🎉</h3>
+                <p>You've cleared your mind in <span id="final-time"></span> and <span id="final-moves"></span> moves!
+                </p>
+                <button class="primary-btn play-again-btn">Play Again</button>
+            </div>
+
+            <button class="secondary-btn back-to-home" style="margin-top: 20px;">Back to Home</button>
+        </section>
+
+        <!-- Placeholder Sections for Nav -->
+        <section id="about-page" class="hidden-section">
+            <header>
+                <h2>About Motion 💜</h2>
+            </header>
+            <div class="about-content" style="text-align: center; margin-top: 20px;">
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
+                    People often feel <b>stressed, anxious, and demotivated</b> but they don't always realize it or seek
+                    help.
+                    That is why <strong>Motion</strong> is made to help you understand your emotions and find peace
+                    every day. 🌸
+                </p>
+
+                <div class="contact-info"
+                    style="background: rgba(255,255,255,0.3); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.5);">
+                    <h3 style="margin-bottom: 15px; color: var(--primary-color);">Contact the Creators 👩‍💻</h3>
+
+                    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+                        <div class="contact-card">
+                            <p><strong>NAME:</strong> Dharvi Delvadia</p>
+                            <p><strong>EMAIL:</strong> <span class="highlight">dharvidelvadia@21gmail.com</span></p>
+                        </div>
+                        <div class="contact-card">
+                            <p><strong>NAME:</strong> Feni Patel</p>
+                            <p><strong>EMAIL:</strong> <span class="highlight">feni3467@gmail.com</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="secondary-btn back-to-home" style="margin-top: 30px;">Back to Home</button>
+        </section>
+
+    </div>
+
+    <script src="mood.js"></script>
+</body>
+
+</html>
